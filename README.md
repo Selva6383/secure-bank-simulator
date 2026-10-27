@@ -1,23 +1,73 @@
-# Secure Bank Simulator (Core Java)
+# 🏦 Secure Bank Simulator
 
-Console-based banking application demonstrating core OOP principles.
+A console-based banking application built using Core Java to demonstrate Object-Oriented Programming (OOP) concepts, exception handling, and Java Collections.
 
-## How to run
-```
-cd src
-javac *.java
-java Main
-```
+## 🚀 Features
 
-## Design
-- **Account.java** — base class; fields are `private` (Encapsulation). Balance can only change through validated `deposit()`/`withdraw()` methods.
-- **SavingsAccount.java / CurrentAccount.java** — extend `Account` (Inheritance). `CurrentAccount` overrides `withdraw()` to allow a controlled overdraft.
-- **InsufficientBalanceException / InvalidTransactionException** — custom checked exceptions for domain-specific error handling.
-- **Bank.java** — uses `HashMap<String, Account>` for O(1) account lookup by account number, and returns an `ArrayList` when listing all accounts (Collections Framework).
-- **Main.java** — console menu tying everything together.
+* Create and manage bank accounts
+* Support Savings and Current account types
+* Deposit and withdraw money
+* Validate transactions and account balances
+* Handle insufficient balance using custom exceptions
+* Store and manage accounts using Java Collections
+* Provide a menu-driven console interface
 
-## Interview talking points
-- **Encapsulation**: `balance` is private in `Account`; even subclasses can't touch it directly — they use a `protected debit()` hook, keeping the invariant "balance only changes through validated methods" intact everywhere.
-- **Inheritance**: `SavingsAccount` and `CurrentAccount` reuse all of `Account`'s logic and only override what's different (`getAccountType()`, and `withdraw()` for overdraft).
-- **Exception handling**: separated `InsufficientBalanceException` (business rule violation) from `InvalidTransactionException` (bad input) so callers can react differently if needed.
-- **Collections**: chose `HashMap` for accounts because lookups by account number are the most frequent operation and need to be fast.
+## 🛠️ Technologies Used
+
+* **Language:** Core Java
+* **Concepts:** OOP, Inheritance, Encapsulation, Polymorphism
+* **Exception Handling:** Custom exceptions
+* **Collections:** HashMap, ArrayList
+
+## 🏗️ Project Design
+
+* **Account:** Base class for common account operations.
+* **Savings Account:** Represents a savings bank account.
+* **Current Account:** Supports current account operations and controlled overdraft.
+* **Custom Exceptions:** Handle insufficient balance and invalid transactions.
+
+## ⚙️ How to Run
+
+### Prerequisites
+
+* Java JDK installed
+* Terminal or command prompt
+
+### Steps
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/Selva6383/secure-bank-simulator.git
+   ```
+
+2. Navigate to the source directory:
+
+   ```bash
+   cd secure-bank-simulator/src
+   ```
+
+3. Compile the Java files:
+
+   ```bash
+   javac *.java
+   ```
+
+4. Run the application:
+
+   ```bash
+   java Main
+   ```
+
+## 🎯 Learning Outcomes
+
+* Applied OOP principles to model banking operations.
+* Used inheritance to represent different account types.
+* Implemented custom exceptions for transaction validation.
+* Used HashMap for account lookup and ArrayList for account listings.
+
+## 👨‍💻 Author
+
+**Selvaganapathy S**
+
+GitHub: [Selva6383](https://github.com/Selva6383)
